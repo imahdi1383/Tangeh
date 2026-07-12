@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -19,6 +20,7 @@ public class ModireMoj : MonoBehaviour
     private int tedadeFaal;
     private bool spawnTamamShode;
     private bool spawnMotevaghef;
+    private List<int> radifHayeSpawn;
 
     public int TedadeSpawnShode => tedadeSpawnShode;
     public int TedadeFaal => tedadeFaal;
@@ -28,7 +30,24 @@ public class ModireMoj : MonoBehaviour
         if (modireShabake == null)
             modireShabake = FindObjectOfType<ModireShabake>();
 
+        SakhtaneRadifHayeSpawn();
         mojCoroutine = StartCoroutine(SpawnMoj());
+    }
+
+    private void SakhtaneRadifHayeSpawn()
+    {
+        radifHayeSpawn = new List<int>();
+
+        for (int i = 0; i < tedadeGhayegheEntehari; i++)
+            radifHayeSpawn.Add(i % modireShabake.Rows);
+
+        for (int i = radifHayeSpawn.Count - 1; i > 0; i--)
+        {
+            int randomIndex = Random.Range(0, i + 1);
+            int temporaryRow = radifHayeSpawn[i];
+            radifHayeSpawn[i] = radifHayeSpawn[randomIndex];
+            radifHayeSpawn[randomIndex] = temporaryRow;
+        }
     }
 
     private IEnumerator SpawnMoj()
@@ -55,7 +74,7 @@ public class ModireMoj : MonoBehaviour
         if (ghayegheEntehariPrefab == null || modireShabake == null)
             return;
 
-        int row = Random.Range(0, modireShabake.Rows);
+        int row = radifHayeSpawn[tedadeSpawnShode];
         Vector3 spawnPosition = modireShabake.GetCellPosition(
             row,
             modireShabake.Columns - 1) + Vector3.right * 2f;
