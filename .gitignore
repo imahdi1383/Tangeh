@@ -13,6 +13,7 @@
 .vs/
 .idea/
 .vscode/
+.vsconfig
 ExportedObj/
 *.csproj
 *.sln
@@ -35,6 +36,8 @@ sysinfo.txt
 *.app
 *.cache
 crashlytics-build.properties
+UpgradeLog.htm
+*.7z
 
 # OS files
 .DS_Store
