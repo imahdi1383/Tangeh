@@ -16,6 +16,9 @@ public class ModireShabake : MonoBehaviour
 
     public int Rows => rows;
     public int Columns => columns;
+    public float GridLeftX => transform.position.x - columns * cellWidth * 0.5f;
+    public float GridCenterY => transform.position.y;
+    public float GridHeight => rows * cellHeight;
     public float CellHeight => cellHeight;
 
     private void Start()

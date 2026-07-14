@@ -1307,6 +1307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87885b8bff97e5d4899751fe554c5c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modireShabake: {fileID: 278797600}
+  faseleAzShabake: 0.2
+  arzKhate: 0.1
 --- !u!61 &1214481535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1331,7 +1334,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 3.3}
+  m_Size: {x: 0.1, y: 3.3000002}
   m_EdgeRadius: 0
 --- !u!4 &1214481536
 Transform:
@@ -1341,7 +1344,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214481533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.75, y: 0, z: 0}
+  m_LocalPosition: {x: -6.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
