@@ -13,9 +13,6 @@ public class ModireBazi : MonoBehaviour
     [FormerlySerializedAs("moneyText")]
     [SerializeField] private TextMeshProUGUI matneMablagheRial;
 
-    [Header("UI")]
-    [SerializeField] private GameObject panelePiroozi;
-    [SerializeField] private GameObject paneleShekast;
     [SerializeField] private ModireMoj modireMoj;
 
     private int mablagheRial;
@@ -36,12 +33,6 @@ public class ModireBazi : MonoBehaviour
         }
 
         Instance = this;
-
-        if (panelePiroozi != null)
-            panelePiroozi.SetActive(false);
-
-        if (paneleShekast != null)
-            paneleShekast.SetActive(false);
     }
 
     private void Start()
@@ -67,51 +58,50 @@ public class ModireBazi : MonoBehaviour
     private void UpdateMablagheRial()
     {
         if (matneMablagheRial != null)
-            matneMablagheRial.text = mablagheRial + " Rial";
+            matneMablagheRial.text = TabdileAdadeFarsi(mablagheRial.ToString()) + " ریال";
     }
 
     public void NamayeshePanelePiroozi()
     {
-        if (baziTamamShode)
-            return;
-
-        baziTamamShode = true;
-        pirooziShode = true;
-
-        if (panelePiroozi != null)
-            panelePiroozi.SetActive(true);
-
-        if (modireMoj != null)
-            modireMoj.TavaqofSpawn();
+        PayaneBazi(true, "MenoyePiroozi");
     }
 
     public void NamayeshePaneleShekast()
     {
+        PayaneBazi(false, "MenoyeShekast");
+    }
+
+    private void PayaneBazi(bool pirooziAst, string esmeSceneNatije)
+    {
         if (baziTamamShode)
             return;
 
         baziTamamShode = true;
-        pirooziShode = false;
-
-        if (paneleShekast != null)
-            paneleShekast.SetActive(true);
+        pirooziShode = pirooziAst;
 
         if (modireMoj != null)
             modireMoj.TavaqofSpawn();
-    }
 
-    public void DokmeyeBaziyeMojadad()
-    {
+        string esmeMarhaleyeFeli = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("AkharinMarhale", esmeMarhaleyeFeli);
+
+        if (pirooziAst && esmeMarhaleyeFeli == "Marhale1")
+            PlayerPrefs.SetString("MarhaleyeBadi", "Marhale2");
+
+        PlayerPrefs.Save();
+
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().path);
+        SceneManager.LoadScene(esmeSceneNatije);
     }
 
-    public void DokmeyeKhorooj()
+    private string TabdileAdadeFarsi(string matn)
     {
-#if UNITY_EDITOR
-        Debug.Log("DokmeyeKhorooj: Application.Quit is ignored in the Unity Editor.");
-#endif
-        Application.Quit();
+        char[] adadeFarsi = { '۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹' };
+
+        for (int i = 0; i < adadeFarsi.Length; i++)
+            matn = matn.Replace((char)('0' + i), adadeFarsi[i]);
+
+        return matn;
     }
 
     private void OnDestroy()

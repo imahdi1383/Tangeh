@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Marhale1.unity
     guid: 242b0c319e96a4946b7942ed734fb3ec
+  - enabled: 1
+    path: Assets/Scenes/MenoyeShekast.unity
+    guid: 993f45111fd4c3c47935c3b0b3e7903c
+  - enabled: 1
+    path: Assets/Scenes/MenoyePiroozi.unity
+    guid: 7815bbb225dfb9549a1b1dc490b46306
   m_configObjects: {}
