@@ -88,6 +88,9 @@ public class ModireBazi : MonoBehaviour
         if (pirooziAst && esmeMarhaleyeFeli == "Marhale1")
             PlayerPrefs.SetString("MarhaleyeBadi", "Marhale2");
 
+        if (pirooziAst && esmeMarhaleyeFeli == "Marhale2")
+            PlayerPrefs.SetString("MarhaleyeBadi", "Marhale1");
+
         PlayerPrefs.Save();
 
         Time.timeScale = 1f;

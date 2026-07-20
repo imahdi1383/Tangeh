@@ -35,9 +35,9 @@ public class ModireNatijeyeBazi : MonoBehaviour
 
     public void Khorooj()
     {
-#if UNITY_EDITOR
-        Debug.Log("Khorooj az bazi dar Unity Editor ejra nemishavad.");
-#endif
+        #if UNITY_EDITOR
+            Debug.Log("Khorooj az bazi dar Unity Editor ejra nemishavad.");
+        #endif
         Application.Quit();
     }
 

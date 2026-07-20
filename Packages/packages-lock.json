@@ -17,6 +17,13 @@
       },
       "hash": "d49ae2953580f3481beb1e084a1da2682f0b5610"
     },
+    "com.nosuchstudio.rtltmpro": {
+      "version": "https://github.com/hk1ll3r/RTLTMPro.git?path=/UPMPackage#v3.4.5",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a010878520b5a8bae71cd1679e0c0add500790cc"
+    },
     "com.unity.2d.animation": {
       "version": "8.0.5",
       "depth": 1,

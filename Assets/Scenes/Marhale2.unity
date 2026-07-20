@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b66dc1b38bde54d9f81707a6ffdcc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 3
+  rows: 4
   columns: 12
   cellWidth: 1.1
   cellHeight: 1.1
@@ -334,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278797599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u06F0\u06F0\u06F1 \uFEAD\uFBFE\uFE8E\uFEDD"
+  m_text: "001 \uFEAD\uFBFE\uFE8E\uFEDD"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: f9193cc64fefd2b45b44bc3ecf450e95, type: 2}
   m_sharedMaterial: {fileID: -4332231792794374239, guid: f9193cc64fefd2b45b44bc3ecf450e95, type: 2}
@@ -720,11 +720,11 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
-  preserveNumbers: 0
+  preserveNumbers: 1
   farsi: 1
   originalText: "100 \u0631\u06CC\u0627\u0644"
   fixTags: 1
-  forceFix: 1
+  forceFix: 0
 --- !u!222 &706174853
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
   ghayegheEntehariPrefab: {fileID: 5302026667856669440, guid: a882a379ba35ec243abe0ed31eed4d83, type: 3}
   faseleyeSpawn: 2.5
   takhireShoroo: 2
-  tedadeGhayegheEntehari: 6
+  tedadeGhayegheEntehari: 10
   modireShabake: {fileID: 278797600}
 --- !u!4 &738619547
 Transform:
@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60d349c7b7aa0c4eab3a55ed958e175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mablagheRialAvalie: 300
+  mablagheRialAvalie: 250
   matneMablagheRial: {fileID: 706174852}
   modireMoj: {fileID: 738619546}
 --- !u!4 &1814566007
